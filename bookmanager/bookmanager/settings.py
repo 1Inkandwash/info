@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # 添加子应用
     # 'book' 方案1
-    # 'book.apps.BookConfig' 方案2
+    # 'book.apps.BookConfig'
+    # 理论上要注册子应用，如果不注册，会在迁移数据库时出现问题
 ]
 
 MIDDLEWARE = [
