@@ -1,6 +1,6 @@
 from django.db import models
 
-# Create your models here.在这里创建模型
+# Create your models here.在这里创建你的模型
 """
 1.我们的模型类  需要继承自  models.Model
 2.系统会自动为我们添加一个主键--id
@@ -21,6 +21,14 @@ class BookInfo(models.Model):
     # 创建字段，字段类型...
     name = models.CharField(max_length=10)
 
+    def __str__(self):
+        """
+        在超级用户登录的页面，添加两条数据，西游记和三国演义
+        显示BookInfo object (1)和BookInfo object (1)
+        这个时候要重写str方法,将模型类以字符串的方式输出
+        刷新页面，书籍名字就显示出来了
+        """
+        return self.name
 
 # 准备人物列表信息的模型类(未理解)
 class PeopleInfo(models.Model):
@@ -30,6 +38,11 @@ class PeopleInfo(models.Model):
     # 外键要指定所属的模型类book = models.ForeignKey(BookInfo)
     book = models.ForeignKey(BookInfo, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.name
+
+
 # makemigrations 生成数据库同步脚本
 # migrations 迁移[网络释义:数据库迁移]
-# no changes detected 没有检测到变化
+# createsuperuser  创建超级管理员
+# superuser超级 用户/管理员

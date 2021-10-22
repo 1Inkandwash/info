@@ -29,7 +29,7 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-# 注册/安装子应用
+# 1.注册/安装子应用
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     # 'book' 方案1
     # 'book.apps.BookConfig'
     # 理论上要注册子应用，如果不注册，会在迁移数据库时出现问题
+    # 一定要注册子应用，不注册，迁移的时候，系统检测不到
+    # 出现no changes detected 没有检测到变化
+    'book'
 ]
 
 MIDDLEWARE = [
@@ -106,10 +109,10 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
-
-LANGUAGE_CODE = 'en-us'
-
-TIME_ZONE = 'UTC'
+# 2.语言设置  设置中文
+LANGUAGE_CODE = 'zh-Hans'  # 'en-us'
+# 3.设置时区 亚洲上海时区
+TIME_ZONE = 'Asia/Shanghai'  # 'UTC'
 
 USE_I18N = True
 
