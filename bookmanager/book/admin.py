@@ -6,4 +6,3 @@ from book.models import BookInfo, PeopleInfo
 admin.site.register(BookInfo)
 admin.site.register(PeopleInfo)
 # 注册完之后，要重新运行django
-
