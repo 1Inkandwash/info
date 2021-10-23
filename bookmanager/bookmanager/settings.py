@@ -144,4 +144,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
+# http://127.0.0.1:8000/static/django_orm.jpg
+# STATIC_URL可以随意更改路由名字
 STATIC_URL = '/static/'
+
+# 7.告知系统 我们的图片在哪里
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
