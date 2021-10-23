@@ -14,6 +14,16 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# print(__file__)
+# C:\Users\Administrator\Desktop\info\bookmanager\bookmanager\settings.py
+
+# dirname()  获取文件的目录
+# os.path.dirname(os.path.abspath(__file__))
+# C:\Users\Administrator\Desktop\info\bookmanager\bookmanager\settings.py
+
+# print(os.path.abspath(__file__))
+# C:\Users\Administrator\Desktop\info\bookmanager\bookmanager\
+# BASE_DIR = C:\Users\Administrator\Desktop\info\bookmanager\
 
 
 # Quick-start development settings - unsuitable for production
@@ -23,9 +33,16 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '_kv6l&q!96zo7p@ryc47+*lcv9@5_lb-7qj$d-r%t1-9%l#tyw'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# 调试模式
+# 在我们开发的时候，我们需要看到更多的信息，所以要开启debug模式
+# 5.当我们的程序上线之后，就改为False
 DEBUG = True
+# DEBUG = False
 
-ALLOWED_HOSTS = []
+# 6.设置为False，一定要配置ALLOWED_HOSTS
+# 允许以什么样的形式来访问我们的项目  默认是 127.0.0.1
+# * 意思是: 可以使用ip 也可以使用127
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition

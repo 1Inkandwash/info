@@ -29,7 +29,6 @@ def index(request):
     1.context 理解为将视图中的数据传递给HTML(模板)
     2.HTML(模板)采用{{变量}}形式来展示数据
     """
-
     # 模拟数据查询
     context = {
         'name': '马上双十一 点击有惊喜'
